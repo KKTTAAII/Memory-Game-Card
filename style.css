@@ -37,3 +37,11 @@ button:hover{
   margin: 0 auto;
   display: block;
 }
+
+.cardContainer{
+  width: 1300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
