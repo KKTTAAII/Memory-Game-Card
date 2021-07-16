@@ -108,7 +108,7 @@ function checkMatched(color1, color2){
 }
 
 function notMatched(){
-    console.log('NOT MATCHED!');
+    // console.log('NOT MATCHED!');
     //we set timer so the cards do not show too long and the user will remember
     setTimeout(() => {
       //if not matched, we make the card's color to nothing
@@ -124,16 +124,16 @@ function matched(){
   //removed the event so user cannot click again
     cardOne.removeEventListener('click', handleCardClick);
     cardTwo.removeEventListener('click', handleCardClick);
-    console.log('MATCHED!');
+    // console.log('MATCHED!');
     //add this to the array so when all match, we know
     matchedCards.push(cardOne, cardTwo); 
-    console.log(matchedCards);
+    // console.log(matchedCards);
     //reset the value the card after it's matched so we can compare a new pair
     cardOne = null;
     cardTwo = null;
     //we alert the user when they match all 10 cards
     if(matchedCards.length === 10){
-      window.location.reload(false);
+      return;
   }
 }
 
