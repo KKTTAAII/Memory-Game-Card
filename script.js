@@ -70,12 +70,13 @@ let cardTwo = '';
 function handleCardClick(event) {
   // you can use event.target to see which element was clicked
   // console.log("you just clicked", event.target);
+  if (cardOne && cardTwo) return;
+  //the above will stop the user from cliking more than 2 cards
   let selectedCard = event.target
   let color = selectedCard.getAttribute('class')
   selectedCard.style.backgroundColor = color;
   flipped++ //count when the card is clicked
-
-
+  
   if(cardOne === selectedCard){
     return cardOne;
   }
@@ -86,8 +87,10 @@ function handleCardClick(event) {
     cardOne = selectedCard//this gives you a string
     }
 
-  checkMatched(cardOne.getAttribute('class'), cardTwo.getAttribute('class'));
-  
+  if(cardOne && cardTwo){
+    checkMatched(cardOne.getAttribute('class'), cardTwo.getAttribute('class'));
+  }
+
   // console.log(`This is ${cardOne.getAttribute('class')} and this is ${cardTwo.getAttribute('class')}`)
 }
 
