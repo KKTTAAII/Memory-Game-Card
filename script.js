@@ -63,8 +63,8 @@ function createDivsForColors(colorArray) {
 }
 let flipped = 0;
 let matchedCards = [];
-let cardOne = null;
-let cardTwo = null;
+let cardOne = '';
+let cardTwo = '';
 
 // TODO: Implement this function!
 function handleCardClick(event) {
@@ -75,14 +75,20 @@ function handleCardClick(event) {
   selectedCard.style.backgroundColor = color;
   flipped++ //count when the card is clicked
 
+
+  if(cardOne === selectedCard){
+    return cardOne;
+  }
+
   if(cardOne){
     cardTwo = selectedCard//this gives you a string
     }else{
     cardOne = selectedCard//this gives you a string
     }
-  
+
   checkMatched(cardOne.getAttribute('class'), cardTwo.getAttribute('class'));
-  console.log(`This is ${cardOne.getAttribute('class')} and this is ${cardTwo.getAttribute('class')}`)
+  
+  // console.log(`This is ${cardOne.getAttribute('class')} and this is ${cardTwo.getAttribute('class')}`)
 }
 
 
